@@ -31,13 +31,13 @@ module.exports = ({env}) => ({
           convert_urls: false,
           entity_encoding: "raw",
           plugins:
-            "advlist autolink lists link image charmap preview anchor \
+            "advlist autolink lists link image media charmap preview anchor \
             searchreplace visualblocks code fullscreen emoticons nonbreaking \
-            insertdatetime media table code help wordcount",
+            insertdatetime media table code help wordcount fullscreen",
           toolbar:
             "undo redo | styles | bold italic forecolor backcolor | \
             alignleft aligncenter alignright alignjustify | \
-            table emoticons code|\
+            table media emoticons code fullscreen |\
             nonbreaking bullist numlist outdent indent | removeformat | help",
           style_formats: [
             {

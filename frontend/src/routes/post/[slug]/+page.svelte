@@ -7,12 +7,12 @@
     data: {
       data: {
         attributes: {
-        Title: string
-        Content: string
-        HeaderImage: object[]
-        Color: string
-        Slug: string
-        Overlays: object[]
+          Title: string
+          Content: string
+          HeaderImage: object[]
+          Color: string
+          Slug: string
+          Overlays: object[]
         }
       }
     }
@@ -35,18 +35,20 @@
           {post.attributes.Title}
         </h1>
         <div class="inner-content">
-          <h2 class="tags">
-          {#each post.attributes.Tags as tag, index}
-            <span>{tag.Tag}</span>
-            {#if index < post.attributes.Tags.length-1}
-              <i>&#x2022;</i>
-            {/if}
-          {/each}
+          {#if post.attributes.Tags.length > 0}
+            <h2 class="tags">
+              {#each post.attributes.Tags as tag, index}
+                <span>{tag.Tag}</span>
+                {#if index < post.attributes.Tags.length - 1}
+                  <i>&#x2022;</i>
+                {/if}
+              {/each}
             </h2>
+          {/if}
           {@html content}
         </div>
       </div>
-      {#if post.attributes.Overlays.length > 0}
+      {#if post.attributes.Overlays.data && post.attributes.Overlays.data.length > 0}
         <div class="overlays-container">
           <div class="overlays">
             {#each post.attributes.Overlays.data as overlay}
@@ -74,6 +76,7 @@
     gap: 0.25em;
     font-weight: 500;
   }
+
   h2.tags i {
     font-style: normal;
     font-size: 0.5em;
@@ -88,7 +91,7 @@
   }
 
   .overlays {
-    z-index: 0;
+    z-index: 1;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -111,7 +114,7 @@
 
   .container :global(table) {
     width: auto !important;
-    margin: 1em -4em;
+    margin: 1em -4.9em;
   }
 
   .container :global(tr) {
@@ -127,6 +130,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+
+    .container :global(p > img) {
+    width: calc(100% + 8em);
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+      margin: 0 -4em;
   }
 
   .content {

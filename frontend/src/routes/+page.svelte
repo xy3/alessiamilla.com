@@ -6,7 +6,9 @@
 </script>
 
 <section>
-  <Alessia/>
+  <div class="header">
+    <Alessia/>
+  </div>
   {#if data.data.data}
     {#each data.data.data as post}
       <PostImage
@@ -18,3 +20,9 @@
     {/each}
   {/if}
 </section>
+
+<style>
+  .header {
+    border: 3px solid white;
+  }
+</style>

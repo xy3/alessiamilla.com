@@ -6,6 +6,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
+          "default-src": ["*.vimeo.com"],
           "script-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "https:", "'unsafe-inline'", 'cdn.jsdelivr.net'],
           "connect-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "blob:", 'data:', 'cdn.jsdelivr.net', 'strapi.io', 'https:'],
           "img-src": [

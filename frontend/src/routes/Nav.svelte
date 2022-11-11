@@ -1,8 +1,8 @@
 <nav>
-  <a href="/">Work</a>
-  <a href="/about">About</a>
+  <a class="underline-from-center" href="/">Work</a>
+  <a class="underline-from-center" href="/about">About</a>
   <div style="flex:1"></div>
-  <a href="/">alessiamilla.com</a>
+  <a class="underline-from-center" href="/">alessiamilla.com</a>
 </nav>
 
 <style>
@@ -23,5 +23,6 @@
     text-transform: uppercase;
     font-weight: bold;
     color: white;
+    padding: 0.4em 0;
   }
 </style>
