@@ -6,8 +6,8 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "script-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "https:"],
-          "connect-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "blob:"],
+          "script-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "https:", "'unsafe-inline'", 'cdn.jsdelivr.net'],
+          "connect-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "blob:", 'data:', 'cdn.jsdelivr.net', 'strapi.io', 'https:'],
           "img-src": [
             "'self'",
             "*.tinymce.com",
@@ -17,6 +17,7 @@ module.exports = [
             "cdn.jsdelivr.net",
             "strapi.io",
             "s3.amazonaws.com",
+            "https:"
           ],
           "style-src": [
             "'self'",

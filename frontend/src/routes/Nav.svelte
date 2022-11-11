@@ -15,7 +15,7 @@
     gap: 1em;
     left: 0;
     margin-left: var(--marquee-width);
-    z-index: 1;
+    z-index: 10;
   }
 
   nav a {

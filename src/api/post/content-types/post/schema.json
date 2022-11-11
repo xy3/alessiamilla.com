@@ -13,10 +13,10 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
-    },
-    "Description": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 75,
+      "unique": true
     },
     "Content": {
       "type": "richtext",
@@ -33,7 +33,15 @@
         "audios"
       ]
     },
-    "ScrollSprites": {
+    "Color": {
+      "type": "customField",
+      "customField": "plugin::color-picker.color"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Overlays": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -44,16 +52,11 @@
         "audios"
       ]
     },
-    "Color": {
-      "type": "customField",
-      "customField": "plugin::color-picker.color"
-    },
-    "Slug": {
-      "type": "uid",
-      "targetField": "Title"
-    },
-    "Something": {
-      "type": "richtext"
+    "Tags": {
+      "displayName": "Tags",
+      "type": "component",
+      "repeatable": true,
+      "component": "tags.tags"
     }
   }
 }

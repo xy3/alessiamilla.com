@@ -17,7 +17,7 @@
 
   .header h1 {
     text-transform: uppercase;
-    font-size: 13vw;
+    font-size: 11.5vw;
     margin: 0;
     font-family: Vegawanty, serif;
     font-weight: lighter;
@@ -37,9 +37,9 @@
   }
 
   .header h4 {
-    font-size: 1rem;
+    font-size: 1.4rem;
     text-align: left;
-    margin-top: -2em;
+    margin-top: -1.2em;
     text-transform: uppercase;
     font-weight: bold;
     font-family: 'Lato', sans-serif;

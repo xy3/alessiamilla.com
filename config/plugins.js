@@ -1,5 +1,23 @@
 // plugins.js
 module.exports = ({env}) => ({
+  'preview-button': {
+    config: {
+      contentTypes: [
+        {
+          uid: 'api::post.post',
+          draft: {
+            url: 'http://localhost:5173/post/',
+            query: {
+              preview: true,
+            },
+          },
+          published: {
+            url: 'http://localhost:5173/post/',
+          },
+        },
+      ],
+    },
+  },
   tinymce: {
     enabled: true,
     config: {

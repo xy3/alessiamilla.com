@@ -5,7 +5,7 @@
   export let title
   export let image
   export let color = "#000000"
-  $: vid = image.endsWith('mp4')
+  $: vid = image && image.endsWith('mp4')
 </script>
 
 <a href="/post/{slug}">

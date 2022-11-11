@@ -1,15 +1,29 @@
 <script lang="ts">
   import {API_URL} from "../../../lib/api/strapi";
   import {onMount} from "svelte";
+  import rallax from "rallax.js";
 
-  export let data;
+  export let data: {
+    data: {
+      data: {
+        attributes: {
+        Title: string
+        Content: string
+        HeaderImage: object[]
+        Color: string
+        Slug: string
+        Overlays: object[]
+        }
+      }
+    }
+  };
   let content: string;
 
   onMount(async () => {
     const post = await data.data.data[0]
     content = post.attributes.Content as string
     content = content.replaceAll("/uploads", API_URL + "/uploads")
-    // content = snarkdown(content)
+    rallax(".overlays-container", {speed: 0.2})
   })
 </script>
 
@@ -21,9 +35,26 @@
           {post.attributes.Title}
         </h1>
         <div class="inner-content">
+          <h2 class="tags">
+          {#each post.attributes.Tags as tag, index}
+            <span>{tag.Tag}</span>
+            {#if index < post.attributes.Tags.length-1}
+              <i>&#x2022;</i>
+            {/if}
+          {/each}
+            </h2>
           {@html content}
         </div>
       </div>
+      {#if post.attributes.Overlays.length > 0}
+        <div class="overlays-container">
+          <div class="overlays">
+            {#each post.attributes.Overlays.data as overlay}
+              <img src={API_URL + overlay.attributes.url} alt="">
+            {/each}
+          </div>
+        </div>
+      {/if}
     </div>
   {/each}
 {/if}
@@ -31,6 +62,42 @@
 <style>
   .container {
     border: 3px solid white;
+    color: white;
+    position: relative;
+  }
+
+  h2.tags {
+    text-transform: uppercase;
+    font-size: 2.5em;
+    line-height: 0.2em;
+    display: flex;
+    gap: 0.25em;
+    font-weight: 500;
+  }
+  h2.tags i {
+    font-style: normal;
+    font-size: 0.5em;
+  }
+
+  .overlays-container {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    top: 0;
+  }
+
+  .overlays {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .overlays img {
+    display: block;
+    flex: 1;
   }
 
   h1 {
@@ -43,10 +110,8 @@
   }
 
   .container :global(table) {
-    margin: 1em 0;
     width: auto !important;
-    margin-left: -4em;
-    margin-right: -4em;
+    margin: 1em -4em;
   }
 
   .container :global(tr) {
@@ -58,7 +123,7 @@
     flex: 1;
   }
 
-  .container :global(img) {
+  .container :global(table img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -66,6 +131,8 @@
 
   .content {
     margin: 5em 20em;
+    position: relative;
+    z-index: 1;
   }
 
   .inner-content {
