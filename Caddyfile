@@ -1,0 +1,7 @@
+api.alessiamilla.com {
+    reverse_proxy 127.0.0.1:1337
+}
+
+alessiamilla.com {
+    reverse_proxy 127.0.0.1:3000
+}
