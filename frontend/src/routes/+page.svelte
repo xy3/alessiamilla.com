@@ -5,6 +5,10 @@
   export let data;
 </script>
 
+<svelte:head>
+  <title>Alessia Milla | Creative Director</title>
+</svelte:head>
+
 <section>
   <div class="header">
     <Alessia/>

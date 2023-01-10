@@ -1,8 +1,6 @@
 import axios from "axios";
-import process from "node:process"
-
-export const API_URL = process?.env?.API_URL || "https://api.alessiamilla.com"
+import {PUBLIC_API_URL} from "$env/static/public";
 
 export const http = axios.create({
-  baseURL: API_URL + "/api",
+  baseURL: PUBLIC_API_URL + "/api",
 })

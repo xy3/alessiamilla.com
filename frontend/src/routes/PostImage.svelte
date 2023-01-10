@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {API_URL} from "../lib/api/strapi";
+  import {PUBLIC_API_URL} from "$env/static/public";
 
   export let slug
   export let title
@@ -8,13 +8,13 @@
   $: vid = image && image.endsWith('mp4')
 </script>
 
-<a href="/post/{slug}">
+<a href="/post/{slug}" on:click>
   <div class="container">
     {#if image && !vid}
-      <img src={API_URL + image} alt={title + " image"}>
+      <img src={PUBLIC_API_URL + image} alt={title + " image"}>
     {/if}
     {#if vid}
-      <video src={API_URL + image} autoplay muted loop></video>
+      <video src={PUBLIC_API_URL + image} autoplay muted loop></video>
     {/if}
     <div class="title" style="background-color:{color+'80'};">
       <h3>{title}</h3>

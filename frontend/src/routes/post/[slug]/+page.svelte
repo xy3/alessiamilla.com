@@ -1,7 +1,10 @@
 <script lang="ts">
-  import {API_URL} from "../../../lib/api/strapi";
-  import {onMount} from "svelte";
+  import {PUBLIC_API_URL} from "$env/static/public";
+  import {afterUpdate, onMount} from "svelte";
   import rallax from "rallax.js";
+  import Lightbox from "../../Lightbox.svelte";
+  let img = ""
+  let open = false
 
   export let data: {
     data: {
@@ -21,11 +24,29 @@
 
   onMount(async () => {
     const post = await data.data.data[0]
+
     content = post.attributes.Content as string
-    content = content.replaceAll("/uploads", API_URL + "/uploads")
+    content = content.replaceAll("/uploads", PUBLIC_API_URL + "/uploads")
     rallax(".overlays-container", {speed: 0.2})
   })
+
+  afterUpdate(() => {
+    document.querySelectorAll('img').forEach((item) => {
+      item.addEventListener('click', () => {
+        img = item.src
+        open = true
+      })
+    });
+  })
 </script>
+
+<svelte:head>
+  {#if data.data.data}
+    <title>{data.data.data[0].attributes.Title} | Alessia Milla</title>
+  {:else}
+    <title>Alessia Milla | Creative Director</title>
+  {/if}
+</svelte:head>
 
 {#if data.data.data}
   {#each data.data.data as post}
@@ -52,7 +73,7 @@
         <div class="overlays-container">
           <div class="overlays">
             {#each post.attributes.Overlays.data as overlay}
-              <img src={API_URL + overlay.attributes.url} alt="">
+              <img src={PUBLIC_API_URL + overlay.attributes.url} alt="">
             {/each}
           </div>
         </div>
@@ -60,8 +81,14 @@
     </div>
   {/each}
 {/if}
+<Lightbox img={img} open={open} setOpen={(isOpen) => {open = isOpen}}/>
+
 
 <style>
+  :global(table img) {
+    cursor: pointer!important;
+  }
+
   .container {
     border: 3px solid white;
     color: white;

@@ -1,6 +1,6 @@
 <script>
   import Alessia from "../Alessia.svelte";
-  import {API_URL} from "../../lib/api/strapi.ts";
+  import {PUBLIC_API_URL} from "$env/static/public";
   import {onMount} from "svelte";
   import rallax from 'rallax.js'
 
@@ -31,28 +31,28 @@
       <div class="inner-content">
         <div class="floating top left">
           <figure data-speed="0.2">
-            <img src={API_URL + data.data.data.attributes.TopLeftMedia.data.attributes.url}
+            <img src={PUBLIC_API_URL + data.data.data.attributes.TopLeftMedia.data.attributes.url}
                  alt={data.data.data.attributes.TopLeftCaption + " image"}>
             <figcaption>{data.data.data.attributes.TopLeftCaption}</figcaption>
           </figure>
         </div>
         <div class="floating top right">
           <figure>
-            <img src={API_URL + data.data.data.attributes.TopRightMedia.data.attributes.url}
+            <img src={PUBLIC_API_URL + data.data.data.attributes.TopRightMedia.data.attributes.url}
                  alt={data.data.data.attributes.TopRightCaption + " image"}>
             <figcaption>{data.data.data.attributes.TopRightCaption}</figcaption>
           </figure>
         </div>
         <div class="floating bottom left">
           <figure>
-            <img src={API_URL + data.data.data.attributes.BottomLeftMedia.data.attributes.url}
+            <img src={PUBLIC_API_URL + data.data.data.attributes.BottomLeftMedia.data.attributes.url}
                  alt={data.data.data.attributes.BottomLeftCaption + " image"}>
             <figcaption>{data.data.data.attributes.BottomLeftCaption}</figcaption>
           </figure>
         </div>
         <div class="floating bottom right">
           <figure>
-            <img src={API_URL + data.data.data.attributes.BottomRightMedia.data.attributes.url}
+            <img src={PUBLIC_API_URL + data.data.data.attributes.BottomRightMedia.data.attributes.url}
                  alt={data.data.data.attributes.BottomRightCaption + " image"}>
             <figcaption>{data.data.data.attributes.BottomRightCaption}</figcaption>
           </figure>
