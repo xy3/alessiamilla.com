@@ -1,13 +1,8 @@
 import axios from "axios";
-import env from "dotenv";
+import process from "node:process"
 
-env.config()
-
-export const API_URL = process.env.API_URL
+export const API_URL = process?.env?.API_URL || "https://api.alessiamilla.com"
 
 export const http = axios.create({
   baseURL: API_URL + "/api",
-  // headers: {
-  //   Authorization: "bearer " + process.env.BEARER
-  // }
 })

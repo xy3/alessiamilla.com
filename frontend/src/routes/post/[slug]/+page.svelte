@@ -130,15 +130,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 16/9;
+    /*aspect-ratio: 16/9;*/
   }
 
-    .container :global(p > img) {
+  .container :global(p > img) {
     width: calc(100% + 8em);
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 16/9;
-      margin: 0 -4em;
+    /*aspect-ratio: 16/9;*/
+    margin: 0 -4em;
   }
 
   .content {
