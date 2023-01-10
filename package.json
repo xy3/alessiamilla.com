@@ -14,7 +14,7 @@
     "@strapi/plugin-color-picker": "^4.4.7",
     "@strapi/plugin-i18n": "4.5.0",
     "@strapi/plugin-users-permissions": "4.5.3",
-    "@strapi/strapi": "4.5.3",
+    "@strapi/strapi": "4.5.5",
     "better-sqlite3": "7.4.6",
     "strapi-plugin-preview-button": "^1.1.1"
   },
