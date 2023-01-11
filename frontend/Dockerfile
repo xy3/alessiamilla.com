@@ -1,11 +1,15 @@
-FROM node:18
+# Dockerfile
+
+FROM node:16-alpine
+
+RUN npm install -g pnpm
 
 WORKDIR /app
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 
 COPY . .
-
-RUN npm install
-RUN npm run build
+RUN pnpm build
 
 EXPOSE 3000
-CMD [ "node", "build/index.js" ]
+CMD ["node", "build"]
