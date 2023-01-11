@@ -33,7 +33,7 @@
     <div class="bg" on:click={() => {setOpen(false)}}>
       <div id="close">CLOSE</div>
     </div>
-    <img src={img} alt={alt}>
+    <img src={img.replace(/size\/w\d+\//, "")} alt={alt}>
   </div>
 {/if}
 
@@ -68,8 +68,9 @@
   }
 
   img {
-    width: 60%;
+    max-width: 80%;
+    max-height: 90%;
     z-index: 1;
-    pointer-events: none;
+    /*pointer-events: none;*/
   }
 </style>

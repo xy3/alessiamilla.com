@@ -1,6 +1,7 @@
 import axios from "axios";
-import {PUBLIC_API_URL} from "$env/static/public";
+
+const PUBLIC_API_URL = process.env.PUBLIC_API_URL
 
 export const http = axios.create({
-  baseURL: PUBLIC_API_URL + "/api",
+    baseURL: PUBLIC_API_URL + "/api",
 })

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
-    "develop": "strapi develop",
+    "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
@@ -13,7 +13,7 @@
     "@sklinet/strapi-plugin-tinymce": "^1.0.4",
     "@strapi/plugin-color-picker": "^4.4.7",
     "@strapi/plugin-i18n": "4.5.0",
-    "@strapi/plugin-users-permissions": "4.5.3",
+    "@strapi/plugin-users-permissions": "4.5.5",
     "@strapi/strapi": "4.5.5",
     "better-sqlite3": "7.4.6",
     "strapi-plugin-preview-button": "^1.1.1"
