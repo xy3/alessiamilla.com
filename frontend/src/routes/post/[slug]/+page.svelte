@@ -85,7 +85,7 @@
 
 
 <style>
-  :global(table img) {
+  :global(.inner-content img) {
     cursor: pointer!important;
   }
 
