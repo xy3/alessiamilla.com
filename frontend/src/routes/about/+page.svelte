@@ -1,7 +1,7 @@
 <script>
     import Alessia from "../Alessia.svelte";
 
-    const PUBLIC_API_URL = process.env.PUBLIC_API_URL
+    import {PUBLIC_API_URL} from "$env/static/public";
     import {onMount} from "svelte";
     import rallax from 'rallax.js'
 

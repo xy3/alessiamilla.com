@@ -1,6 +1,5 @@
 <script lang="ts">
-  // import {PUBLIC_API_URL} from "$env/static/public";
-  const PUBLIC_API_URL = process.env.PUBLIC_API_URL
+  import {PUBLIC_API_URL} from "$env/static/public";
 
   export let slug
   export let title

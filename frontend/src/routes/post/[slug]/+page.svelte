@@ -1,5 +1,5 @@
 <script lang="ts">
-  const PUBLIC_API_URL = process.env.PUBLIC_API_URL
+  import {PUBLIC_API_URL} from "$env/static/public";
   import {afterUpdate, onMount} from "svelte";
   import rallax from "rallax.js";
   import Lightbox from "../../Lightbox.svelte";
