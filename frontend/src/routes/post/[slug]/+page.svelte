@@ -3,6 +3,7 @@
   import {afterUpdate, onMount} from "svelte";
   import rallax from "rallax.js";
   import Lightbox from "../../Lightbox.svelte";
+  import Loader from "../../Loader.svelte";
   let img = ""
   let open = false
 
@@ -26,11 +27,26 @@
     const post = await data.data.data[0]
 
     content = post.attributes.Content as string
-    content = content.replaceAll("/uploads", PUBLIC_API_URL + "/uploads")
-    rallax(".overlays-container", {speed: 0.2})
+    content = content.replaceAll("<p> </p>", "")
+    content = content.replaceAll('<div class="vsc-controller"> </div>', "")
+
+    console.log(content)
+    // content = content.replaceAll(/\/uploads/, PUBLIC_API_URL + "/uploads")
+    if (await document.querySelector(".overlays-container")) {
+      rallax(".overlays-container", {speed: 0.2})
+    }
   })
 
-  afterUpdate(() => {
+
+
+  afterUpdate(async () => {
+    const videos = await document.querySelectorAll("video")
+    if (videos) {
+      await videos.forEach(vid => {
+        vid.play()
+      })
+    }
+    // document.querySelector("video").play()
     document.querySelectorAll('img').forEach((item) => {
       item.addEventListener('click', () => {
         img = item.src
@@ -66,7 +82,11 @@
               {/each}
             </h2>
           {/if}
-          {@html content}
+          {#if content}
+            {@html content}
+          {:else}
+            <Loader/>
+          {/if}
         </div>
       </div>
       {#if post.attributes.Overlays.data && post.attributes.Overlays.data.length > 0}
@@ -87,6 +107,10 @@
 <style>
   :global(.inner-content img) {
     cursor: pointer!important;
+  }
+
+    :global(p) {
+    display: flex;
   }
 
   .container {
@@ -141,7 +165,7 @@
 
   .container :global(table) {
     width: auto !important;
-    margin: 1em -4.9em;
+    margin: 0.5em -4.9em;
   }
 
   .container :global(tr) {
@@ -155,9 +179,13 @@
 
   .container :global(table img) {
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     object-fit: cover;
     /*aspect-ratio: 16/9;*/
+  }
+
+    .container :global(p) {
+    margin: 0.5em 0;
   }
 
   .container :global(p > img) {
@@ -168,16 +196,88 @@
     margin: 0 -4em;
   }
 
-  .content {
-    margin: 5em 20em;
-    position: relative;
-    z-index: 1;
+  :global(td) {
+    height: unset!important;
+  }
+    :global(tr) {
+    height: unset!important;
+  }
+
+  .container :global(video) {
+    width: calc(100% + 8em);
+    height: 100%;
+    object-fit: cover;
+    margin: 0 -4em;
   }
 
   .inner-content {
-    margin: 0 12rem;
     display: flex;
     flex-direction: column;
     /*gap: 0.5em;*/
   }
+
+    .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content {
+    margin: 5em 3em;
+  }
+    .inner-content {
+      margin: 0 18%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .content {
+    margin: 5em 2em;
+  }
+    .inner-content {
+      margin: 0 18%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .content {
+  }
+    .inner-content {
+      margin: 0 18%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px) {
+  .content {
+    margin: 5em 10em;
+  }
+  .inner-content {
+        margin: 0 18%;
+  }
+}
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1440px) {
+  .content {
+    margin: 5em 15em;
+  }
+  .inner-content {
+        margin: 0 18%;
+  }
+}
+
 </style>

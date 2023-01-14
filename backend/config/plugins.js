@@ -16,29 +16,38 @@ module.exports = ({env}) => (
         ],
       },
     },
-    tinymce: {
+    'tinymce': {
       enabled: true,
+      resolve: './src/plugins/tinymce',
       config: {
         editor: {
           outputFormat: "html",
           editorConfig: {
             fullscreen_native: true,
             content_css: "/style.css",
-            height: 900,
+            language: "en",
+            height: 500,
+            remove_linebreaks: true,
+            force_br_newlines: false,
+            remove_trailing_brs: true,
+            cleanup: true,
+            convert_newlines_to_brs: false,
+            invalid_elements: "span",
             menubar: false,
-            extended_valid_elements: "span, img, small",
+            // extended_valid_elements: "img, small, video[src|muted|autoplay=true|loop]",
             forced_root_block: "",
             convert_urls: false,
             entity_encoding: "raw",
+            media_filter_html: false,
             plugins:
-              "advlist autolink lists link image media charmap preview anchor \
-              searchreplace visualblocks code fullscreen emoticons nonbreaking \
-              insertdatetime media table code help wordcount fullscreen",
+              "advlist autolink lists link image charmap preview anchor \
+              searchreplace visualblocks code fullscreen table emoticons \
+              insertdatetime media table code help wordcount",
             toolbar:
-              "undo redo fullscreen | table styles | bold italic forecolor  | \
+              "undo redo | styles | bold italic forecolor backcolor | \
               alignleft aligncenter alignright alignjustify | \
-              media emoticons code backcolor |\
-              nonbreaking bullist numlist outdent indent | removeformat | help",
+              table emoticons visualblocks code|\
+              bullist numlist outdent indent | removeformat | help",
             style_formats: [
               {
                 title: "Headings",
