@@ -44,9 +44,9 @@ module.exports = ({env}) => (
               searchreplace code fullscreen table emoticons \
               insertdatetime media table code help wordcount",
             toolbar:
-              "undo redo fullscreen | styles | bold italic forecolor backcolor | \
+              "undo redo fullscreen | styles | bold italic forecolor | \
               alignleft aligncenter alignright alignjustify | \
-              table emoticons |\
+              table emoticons media |\
               bullist numlist outdent indent | removeformat | help",
             style_formats: [
               {

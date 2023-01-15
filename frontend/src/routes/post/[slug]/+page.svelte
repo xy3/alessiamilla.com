@@ -29,6 +29,7 @@
     content = post.attributes.Content as string
     content = content.replaceAll("<p> </p>", "")
     content = content.replaceAll('<div class="vsc-controller"> </div>', "")
+    content = content.replaceAll(' ', " ")
 
     // console.log(content)
     // content = content.replaceAll(/\/uploads/, PUBLIC_API_URL + "/uploads")
@@ -103,8 +104,17 @@
     cursor: pointer!important;
   }
 
-    :global(p) {
+  :global(p) {
     display: flex;
+  }
+
+  .container :global(table td > p > img) {
+    width: 100%!important;
+    margin: 0!important;
+  }
+
+  .container :global(table td > p) {
+    padding: 0!important;
   }
 
   .container {
@@ -139,7 +149,8 @@
 
   .container :global(table) {
     width: auto !important;
-    margin: 0.5em -4.9em;
+    margin: 0 -4.9em;
+    padding: 0.5em 0;
     display: flex;
     height: unset!important;
   }
@@ -164,8 +175,9 @@
     /*aspect-ratio: 16/9;*/
   }
 
-    .container :global(p) {
-    margin: 0.5em 0;
+  .container :global(p) {
+    margin: 0;
+      padding: 0.5em 0;
   }
 
   .container :global(p > img) {
