@@ -1,9 +1,9 @@
 <script lang="ts">
-  import {PUBLIC_API_URL} from "$env/static/public";
   import {afterUpdate, onMount} from "svelte";
   import rallax from "rallax.js";
   import Lightbox from "../../Lightbox.svelte";
   import Loader from "../../Loader.svelte";
+  import Overlays from "./Overlays.svelte";
   let img = ""
   let open = false
 
@@ -30,7 +30,7 @@
     content = content.replaceAll("<p> </p>", "")
     content = content.replaceAll('<div class="vsc-controller"> </div>', "")
 
-    console.log(content)
+    // console.log(content)
     // content = content.replaceAll(/\/uploads/, PUBLIC_API_URL + "/uploads")
     if (await document.querySelector(".overlays-container")) {
       rallax(".overlays-container", {speed: 0.2})
@@ -90,13 +90,7 @@
         </div>
       </div>
       {#if post.attributes.Overlays.data && post.attributes.Overlays.data.length > 0}
-        <div class="overlays-container">
-          <div class="overlays">
-            {#each post.attributes.Overlays.data as overlay}
-              <img src={PUBLIC_API_URL + overlay.attributes.url} alt="">
-            {/each}
-          </div>
-        </div>
+        <Overlays overlays={post.attributes.Overlays.data} />
       {/if}
     </div>
   {/each}
@@ -133,26 +127,6 @@
     font-size: 0.5em;
   }
 
-  .overlays-container {
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    top: 0;
-  }
-
-  .overlays {
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
-  .overlays img {
-    display: block;
-    flex: 1;
-  }
 
   h1 {
     font-family: 'Vegawanty', serif;
@@ -166,6 +140,12 @@
   .container :global(table) {
     width: auto !important;
     margin: 0.5em -4.9em;
+    display: flex;
+    height: unset!important;
+  }
+
+  .container :global(tbody) {
+    width: 100%;
   }
 
   .container :global(tr) {

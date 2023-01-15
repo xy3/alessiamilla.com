@@ -26,7 +26,8 @@
   .container {
     display: flex;
     position: relative;
-    height: 400px;
+    /*height: 400px;*/
+    height: 19vw;
     overflow: hidden;
     border: 3px solid white;
     margin: -3px 0 0 0;
