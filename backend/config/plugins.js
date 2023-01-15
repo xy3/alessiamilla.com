@@ -41,12 +41,12 @@ module.exports = ({env}) => (
             media_filter_html: false,
             plugins:
               "advlist autolink lists link image charmap preview anchor \
-              searchreplace visualblocks code fullscreen table emoticons \
+              searchreplace code fullscreen table emoticons \
               insertdatetime media table code help wordcount",
             toolbar:
-              "undo redo | styles | bold italic forecolor backcolor | \
+              "undo redo fullscreen | styles | bold italic forecolor backcolor | \
               alignleft aligncenter alignright alignjustify | \
-              table emoticons visualblocks code|\
+              table emoticons |\
               bullist numlist outdent indent | removeformat | help",
             style_formats: [
               {

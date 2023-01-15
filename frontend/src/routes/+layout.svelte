@@ -5,6 +5,10 @@
     import {afterUpdate} from "svelte";
 </script>
 
+<svelte:head>
+    <link rel="preconnect" href="https://api.alessiamilla.com">
+</svelte:head>
+
 <Marquee/>
 <div class="app">
     <Nav/>

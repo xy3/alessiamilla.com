@@ -30,7 +30,7 @@ const Wysiwyg = ({
     assets.map((asset) => {
       if (asset.mime.includes("image") && typeof window !== 'undefined') {
         const imgTag = `<p>
-                <img src="${asset.url}"
+                <img src="${asset.formats.large || asset.url}"
                     loading="lazy"
                     sizes="50vw"
                     srcset="
