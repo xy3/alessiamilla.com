@@ -32,8 +32,7 @@
     content = content.replaceAll('<div class="vsc-controller"> </div>', "")
     content = content.replaceAll(' ', " ")
 
-    // console.log(content)
-    content = content.replaceAll(/"\/uploads/, '"' + PUBLIC_API_URL + "/uploads")
+    content = content.replaceAll('"/uploads', `"${PUBLIC_API_URL}/uploads`)
     if (await document.querySelector(".overlays-container")) {
       rallax(".overlays-container", {speed: 0.2})
     }
@@ -122,6 +121,7 @@
     border: 3px solid white;
     color: white;
     position: relative;
+    overflow: hidden;
   }
 
   h2.tags {
@@ -207,6 +207,12 @@
     display: flex;
     flex-direction: column;
     /*gap: 0.5em;*/
+    /*max-width: -webkit-fill-available;*/
+    /*max-width: -webkit-fill-available;*/
+    width: 80%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
   }
 
     .content {
