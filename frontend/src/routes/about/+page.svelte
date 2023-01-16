@@ -44,20 +44,24 @@
                         <figcaption>{data.data.data.attributes.TopRightCaption}</figcaption>
                     </figure>
                 </div>
-                <div class="floating bottom left">
-                    <figure>
-                        <img src={PUBLIC_API_URL + data.data.data.attributes.BottomLeftMedia.data.attributes.url}
-                             alt={data.data.data.attributes.BottomLeftCaption + " image"}>
-                        <figcaption>{data.data.data.attributes.BottomLeftCaption}</figcaption>
-                    </figure>
-                </div>
-                <div class="floating bottom right">
-                    <figure>
-                        <img src={PUBLIC_API_URL + data.data.data.attributes.BottomRightMedia.data.attributes.url}
-                             alt={data.data.data.attributes.BottomRightCaption + " image"}>
-                        <figcaption>{data.data.data.attributes.BottomRightCaption}</figcaption>
-                    </figure>
-                </div>
+                {#if data.data.data.attributes.BottomLeftMedia.data}
+                    <div class="floating bottom left">
+                        <figure>
+                            <img src={PUBLIC_API_URL + data.data.data.attributes.BottomLeftMedia.data.attributes.url}
+                                 alt={data.data.data.attributes.BottomLeftCaption + " image"}>
+                            <figcaption>{data.data.data.attributes.BottomLeftCaption}</figcaption>
+                        </figure>
+                    </div>
+                {/if}
+                {#if data.data.data.attributes.BottomRightMedia.data}
+                    <div class="floating bottom right">
+                        <figure>
+                            <img src={PUBLIC_API_URL + data.data.data.attributes.BottomRightMedia.data.attributes.url}
+                                 alt={data.data.data.attributes.BottomRightCaption + " image"}>
+                            <figcaption>{data.data.data.attributes.BottomRightCaption}</figcaption>
+                        </figure>
+                    </div>
+                {/if}
                 <p>
                     {@html data.data.data.attributes.Content}
                 </p>
