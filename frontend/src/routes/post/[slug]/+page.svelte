@@ -4,6 +4,7 @@
   import Lightbox from "../../Lightbox.svelte";
   import Loader from "../../Loader.svelte";
   import Overlays from "./Overlays.svelte";
+  import {PUBLIC_API_URL} from "$env/static/public";
   let img = ""
   let open = false
 
@@ -32,7 +33,7 @@
     content = content.replaceAll(' ', " ")
 
     // console.log(content)
-    // content = content.replaceAll(/\/uploads/, PUBLIC_API_URL + "/uploads")
+    content = content.replaceAll(/"\/uploads/, '"' + PUBLIC_API_URL + "/uploads")
     if (await document.querySelector(".overlays-container")) {
       rallax(".overlays-container", {speed: 0.2})
     }
@@ -105,7 +106,7 @@
   }
 
   :global(p) {
-    display: flex;
+    /*display: flex;*/
   }
 
   .container :global(table td > p > img) {

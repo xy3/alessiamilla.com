@@ -6,7 +6,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "default-src": ["*.vimeo.com"],
+          "default-src": ["*.vimeo.com", "*.youtube.com", "*.youtu.be"],
           "script-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "https:", "'unsafe-inline'", 'cdn.jsdelivr.net'],
           "connect-src": ["'self'", "*.tinymce.com", "*.tiny.cloud", "blob:", 'data:', 'cdn.jsdelivr.net', 'strapi.io', 'https:'],
           "img-src": [
@@ -36,7 +36,7 @@ module.exports = [
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
-	  {
+  {
     name: "strapi::body",
     config: {
       formLimit: "256mb", // modify form body
