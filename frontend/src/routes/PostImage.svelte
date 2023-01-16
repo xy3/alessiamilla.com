@@ -8,10 +8,10 @@
     export let color = "#000000"
     $: vid = image && image.endsWith('mp4')
 
-    afterUpdate(() => {
-        document.querySelectorAll("video").forEach(v => {
+    afterUpdate(async () => {
+        await document.querySelectorAll("video").forEach(v => {
             const source = v.querySelector("source")
-            v.pause()
+            // v.pause()
             source.setAttribute('src', v.src);
             v.load();
             v.play();
