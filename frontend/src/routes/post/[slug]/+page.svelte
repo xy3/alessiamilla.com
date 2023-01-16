@@ -108,6 +108,10 @@
     /*display: flex;*/
   }
 
+  :global(iframe) {
+    height: unset;
+  }
+
   .container :global(table td > p > img) {
     width: 100%!important;
     margin: 0!important;

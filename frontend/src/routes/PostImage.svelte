@@ -1,11 +1,19 @@
 <script lang="ts">
   import {PUBLIC_API_URL} from "$env/static/public";
+  import {afterUpdate} from "svelte";
 
   export let slug
   export let title
   export let image
   export let color = "#000000"
   $: vid = image && image.endsWith('mp4')
+
+  afterUpdate(async () => {
+    await document.querySelectorAll("video").forEach(v => {
+      v.load()
+    })
+  })
+
 </script>
 
 <a href="/post/{slug}" on:click>
@@ -14,7 +22,9 @@
       <img src={PUBLIC_API_URL + image} alt={title + " image"}>
     {/if}
     {#if vid}
-      <video src={PUBLIC_API_URL + image} autoplay muted loop></video>
+      <video playsinline autoplay muted loop style={"background:"+color}>
+  <source src={PUBLIC_API_URL + image} type="video/mp4">
+</video>
     {/if}
     <div class="title" style="background-color:{color+'80'};">
       <h3>{title}</h3>
