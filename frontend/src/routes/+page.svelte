@@ -26,7 +26,4 @@
 </section>
 
 <style>
-    .header {
-        border: var(--border-width) solid white;
-    }
 </style>

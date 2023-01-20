@@ -1,12 +1,18 @@
+<script>
+    import PostContainer from "./PostContainer.svelte";
+</script>
+
 <div class="header">
-    <div>
-        <div>
-            <h1>
-                Alessia Milla
-            </h1>
-            <h4>Creative Direction and consultancy</h4>
+    <PostContainer>
+        <div class="inner-content">
+            <div class="text">
+                <h1>
+                    Alessia Milla
+                </h1>
+                <h4>Creative Direction and consultancy</h4>
+            </div>
         </div>
-    </div>
+    </PostContainer>
 </div>
 
 <style>
@@ -23,18 +29,20 @@
         white-space: nowrap;
     }
 
-    .header > div {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 19vw;
-    }
-
-    .header > div > div {
+    .inner-content {
         display: flex;
         flex-direction: column;
         margin-top: -1vw;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
+
+    .text {
+        /*width: 90%;*/
+        padding: 1em;
+    }
+
 
     h4 {
         text-align: left;
@@ -48,13 +56,32 @@
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {
         h1 {
-            text-align: center;
-            font-size: 8vw;
+            /*text-align: center;*/
+            font-size: 7vw;
             white-space: normal;
+            /*font-weight: 600;*/
         }
 
         h4 {
             margin-top: 0;
+            font-weight: 400;
+            font-size: 2.5vw;
+        }
+    }
+
+
+    @media only screen and (max-width: 407px) {
+        h1 {
+            /*text-align: center;*/
+            font-size: 6.1vw;
+            white-space: normal;
+            /*font-weight: 600;*/
+        }
+
+        h4 {
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 2.5vw;
         }
     }
 
@@ -85,7 +112,7 @@
     /* Extra large devices (large laptops and desktops, 1200px and up) */
     @media only screen and (min-width: 1024px) {
         h1 {
-            font-size: 11.5vw;
+            font-size: 11vw;
         }
     }
 

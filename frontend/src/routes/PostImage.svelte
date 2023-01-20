@@ -1,6 +1,7 @@
 <script lang="ts">
     import {PUBLIC_API_URL} from "$env/static/public";
     import {afterUpdate} from "svelte";
+    import PostContainer from "./PostContainer.svelte";
 
     export let slug
     export let title
@@ -21,7 +22,7 @@
 </script>
 
 <a href="/post/{slug}" on:click>
-    <div class="container">
+    <PostContainer>
         {#if image && !vid}
             <img src={PUBLIC_API_URL + image} alt={title + " image"}>
         {/if}
@@ -33,20 +34,10 @@
         <div class="title" style="background-color:{color+'80'};">
             <h3>{title}</h3>
         </div>
-    </div>
+    </PostContainer>
 </a>
 
 <style>
-    .container {
-        display: flex;
-        position: relative;
-        /*height: 400px;*/
-        height: 19vw;
-        overflow: hidden;
-        border: var(--border-width) solid white;
-        margin: var(--negative-border-width) 0 0 0;
-    }
-
     video {
         object-fit: cover;
         object-position: center;
@@ -83,7 +74,7 @@
     }
 
 
-        @keyframes fontChange {
+    @keyframes fontChange {
         0% {
             font-family: 'Lato', sans-serif;
             font-style: normal;
@@ -115,146 +106,5 @@
         flex: 1;
         width: 100%;
     }
-
-/*      !* Extra small devices (phones, 600px and down) *!*/
-/*@media only screen and (max-width: 500px) {*/
-/*    h3 {*/
-/*        text-align: center;*/
-/*        font-size: 1em;*/
-/*    }*/
-
-/*        @keyframes fontChange {*/
-/*        0% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-style: normal;*/
-/*            font-weight: bold;*/
-/*            letter-spacing: 0.0em;*/
-/*            font-size: 1.05em;*/
-/*        }*/
-/*        33% {*/
-/*            font-family: 'Vegawanty', serif;*/
-/*            font-style: normal;*/
-/*            margin-bottom: -4px;*/
-/*            letter-spacing: 0.1em;*/
-/*            font-size: 1em;*/
-/*        }*/
-/*        66% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-weight: lighter;*/
-/*            font-style: italic;*/
-/*            margin-bottom: 0;*/
-/*            letter-spacing: 0.03em;*/
-/*            font-size: 1.1em;*/
-/*        }*/
-/*    }*/
-
-/*            .container {*/
-/*        height: 40vw;*/
-/*    }*/
-
-/*}*/
-
-
-
-/*      !* Extra small devices (phones, 600px and down) *!*/
-/*@media only screen and (min-width: 501px) {*/
-/*    h3 {*/
-/*        text-align: center;*/
-/*        font-size: 2vw;*/
-/*    }*/
-
-/*        @keyframes fontChange {*/
-/*        0% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-style: normal;*/
-/*            font-weight: bold;*/
-/*            letter-spacing: 0.0em;*/
-/*            font-size: 4.25vw;*/
-/*        }*/
-/*        33% {*/
-/*            font-family: 'Vegawanty', serif;*/
-/*            font-style: normal;*/
-/*            margin-bottom: -4px;*/
-/*            letter-spacing: 0.1em;*/
-/*            font-size: 4.2vw;*/
-/*        }*/
-/*        66% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-weight: lighter;*/
-/*            font-style: italic;*/
-/*            margin-bottom: 0;*/
-/*            letter-spacing: 0.03em;*/
-/*            font-size: 4.3vw;*/
-/*        }*/
-/*    }*/
-
-/*                        .container {*/
-/*        height: 30vw;*/
-/*    }*/
-
-/*}*/
-
-
-
-
-
-/*!* Small devices (portrait tablets and large phones, 600px and up) *!*/
-/*@media only screen and (min-width: 1024px) {*/
-/*    @keyframes fontChange {*/
-/*        0% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-style: normal;*/
-/*            font-weight: bold;*/
-/*            letter-spacing: 0.0em;*/
-/*            font-size: 2.4em;*/
-/*        }*/
-/*        33% {*/
-/*            font-family: 'Vegawanty', serif;*/
-/*            font-style: normal;*/
-/*            margin-bottom: -15px;*/
-/*            letter-spacing: 0.05em;*/
-/*            font-size: 2.5em;*/
-/*        }*/
-/*        66% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-weight: lighter;*/
-/*            font-style: italic;*/
-/*            margin-bottom: 0;*/
-/*            letter-spacing: normal;*/
-/*            font-size: 2.5em;*/
-/*        }*/
-/*    }*/
-/*}*/
-
-
-/*    !* Small devices (portrait tablets and large phones, 600px and up) *!*/
-/*@media only screen and (min-width: 1440px) {*/
-/*    @keyframes fontChange {*/
-/*        0% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-style: normal;*/
-/*            font-weight: bold;*/
-/*            letter-spacing: 0.0em;*/
-/*            font-size: 2.9em;*/
-/*        }*/
-/*        33% {*/
-/*            font-family: 'Vegawanty', serif;*/
-/*            font-style: normal;*/
-/*            margin-bottom: -15px;*/
-/*            letter-spacing: 0.05em;*/
-/*            font-size: 3em;*/
-/*        }*/
-/*        66% {*/
-/*            font-family: 'Lato', sans-serif;*/
-/*            font-weight: lighter;*/
-/*            font-style: italic;*/
-/*            margin-bottom: 0;*/
-/*            letter-spacing: normal;*/
-/*            font-size: 3em;*/
-/*        }*/
-/*    }*/
-/*}*/
-
-
 
 </style>
