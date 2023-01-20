@@ -4,14 +4,13 @@
             <h1>
                 Alessia Milla
             </h1>
-            <h4>Freelance Creative Director - Art</h4>
+            <h4>Creative Direction and consultancy</h4>
         </div>
     </div>
 </div>
 
 <style>
     .header {
-        /*border: 3px solid white;*/
         padding: 0;
     }
 

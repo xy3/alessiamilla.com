@@ -34,7 +34,7 @@
 
     content = content.replaceAll('"/uploads', `"${PUBLIC_API_URL}/uploads`)
     if (await document.querySelector(".overlays-container")) {
-      rallax(".overlays-container", {speed: 0.2})
+      rallax(".overlays-container", {speed: 0.5})
     }
   })
 
@@ -106,7 +106,19 @@
 
   :global(p) {
     /*display: flex;*/
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 2.5em;
+    letter-spacing: 0.3em;
+    margin-bottom:15em;
   }
+
+    :global(small) {
+    line-height: 2.5em;
+    letter-spacing: 0.2em;
+    margin-bottom:15em;
+  }
+
 
   :global(iframe) {
     height: unset;
@@ -122,7 +134,7 @@
   }
 
   .container {
-    border: 3px solid white;
+    border: var(--border-width) solid white;
     color: white;
     position: relative;
     overflow: hidden;

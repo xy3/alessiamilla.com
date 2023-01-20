@@ -72,7 +72,7 @@
 
 <style>
     .container {
-        border: 3px solid white;
+        border: var(--border-width) solid white;
         position: relative;
         display: flex;
         flex-direction: column;

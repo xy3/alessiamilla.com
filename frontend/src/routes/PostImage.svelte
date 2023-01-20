@@ -43,8 +43,8 @@
         /*height: 400px;*/
         height: 19vw;
         overflow: hidden;
-        border: 3px solid white;
-        margin: -3px 0 0 0;
+        border: var(--border-width) solid white;
+        margin: var(--negative-border-width) 0 0 0;
     }
 
     video {
@@ -67,7 +67,7 @@
 
     h3 {
         text-transform: uppercase;
-        font-size: 4em;
+        font-size: 4vw;
         margin: 0;
     }
 
@@ -82,24 +82,32 @@
         animation-timing-function: step-end;
     }
 
-    @keyframes fontChange {
+
+        @keyframes fontChange {
         0% {
             font-family: 'Lato', sans-serif;
             font-style: normal;
             font-weight: bold;
+            letter-spacing: 0.0em;
+            font-size: 1.9em;
         }
         33% {
             font-family: 'Vegawanty', serif;
             font-style: normal;
             margin-bottom: -15px;
+            letter-spacing: 0.05em;
+            font-size: 2em;
         }
         66% {
             font-family: 'Lato', sans-serif;
             font-weight: lighter;
             font-style: italic;
             margin-bottom: 0;
+            letter-spacing: normal;
+            font-size: 2em;
         }
     }
+
 
     img {
         object-fit: cover;
@@ -107,4 +115,104 @@
         flex: 1;
         width: 100%;
     }
+
+      /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    h3 {
+        text-align: center;
+    }
+
+        @keyframes fontChange {
+        0% {
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            letter-spacing: 0.0em;
+            font-size: 1.9em;
+        }
+        33% {
+            font-family: 'Vegawanty', serif;
+            font-style: normal;
+            margin-bottom: -15px;
+            letter-spacing: 0.05em;
+            font-size: 2em;
+        }
+        66% {
+            font-family: 'Lato', sans-serif;
+            font-weight: lighter;
+            font-style: italic;
+            margin-bottom: 0;
+            letter-spacing: normal;
+            font-size: 2em;
+        }
+    }
+
+            .container {
+        height: 40vw;
+    }
+
+}
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 1024px) {
+    @keyframes fontChange {
+        0% {
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            letter-spacing: 0.0em;
+            font-size: 2.4em;
+        }
+        33% {
+            font-family: 'Vegawanty', serif;
+            font-style: normal;
+            margin-bottom: -15px;
+            letter-spacing: 0.05em;
+            font-size: 2.5em;
+        }
+        66% {
+            font-family: 'Lato', sans-serif;
+            font-weight: lighter;
+            font-style: italic;
+            margin-bottom: 0;
+            letter-spacing: normal;
+            font-size: 2.5em;
+        }
+    }
+}
+
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 1440px) {
+    @keyframes fontChange {
+        0% {
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            letter-spacing: 0.0em;
+            font-size: 2.9em;
+        }
+        33% {
+            font-family: 'Vegawanty', serif;
+            font-style: normal;
+            margin-bottom: -15px;
+            letter-spacing: 0.05em;
+            font-size: 3em;
+        }
+        66% {
+            font-family: 'Lato', sans-serif;
+            font-weight: lighter;
+            font-style: italic;
+            margin-bottom: 0;
+            letter-spacing: normal;
+            font-size: 3em;
+        }
+    }
+}
+
+
+
 </style>
