@@ -1,15 +1,15 @@
 <script>
     import PostContainer from "./PostContainer.svelte";
+
+    export let bordered = true
 </script>
 
 <div class="header">
-    <PostContainer>
+    <PostContainer bordered={bordered}>
         <div class="inner-content">
-            <div class="text">
-                <h1>
-                    Alessia Milla
-                </h1>
-                <h4>Creative Direction and consultancy</h4>
+            <div class="images">
+                <img class="am" src="/am.svg" alt="Alessia Milla">
+                <img class="creative" src="/creative.svg" alt="Creative Director and consultancy">
             </div>
         </div>
     </PostContainer>
@@ -20,103 +20,59 @@
         padding: 0;
     }
 
-    h1 {
-        text-transform: uppercase;
-        margin: 0;
-        font-family: Vegawanty, serif;
-        font-weight: lighter;
-        letter-spacing: 12px;
-        white-space: nowrap;
-    }
-
     .inner-content {
         display: flex;
         flex-direction: column;
-        margin-top: -1vw;
         justify-content: center;
         align-items: center;
         width: 100%;
+        padding: 4vw;
     }
 
-    .text {
-        /*width: 90%;*/
-        padding: 1em;
+    .images {
+        gap: 3vw;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-
-    h4 {
-        text-align: left;
-        margin-bottom: 0;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-family: 'Lato', sans-serif;
-        letter-spacing: 2px;
+    .creative {
+        width: 30vw;
     }
 
-    /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {
-        h1 {
-            /*text-align: center;*/
-            font-size: 7vw;
-            white-space: normal;
-            /*font-weight: 600;*/
-        }
-
-        h4 {
-            margin-top: 0;
-            font-weight: 400;
-            font-size: 2.5vw;
+        .creative {
+            width: 60vw;
         }
     }
 
-
-    @media only screen and (max-width: 407px) {
-        h1 {
-            /*text-align: center;*/
-            font-size: 6.1vw;
-            white-space: normal;
-            /*font-weight: 600;*/
-        }
-
-        h4 {
-            margin-top: 0;
-            font-weight: 400;
-            font-size: 2.5vw;
+    @media only screen and (max-width: 425px) {
+        .creative {
+            width: 70vw;
         }
     }
 
-    /* Small devices (portrait tablets and large phones, 600px and up) */
     @media only screen and (min-width: 600px) {
-        h1 {
-            font-size: 9vw;
-        }
-
-        h4 {
-            font-size: 1em;
-            margin-top: -1.2vw;
+        .creative {
+            width: 50vw;
         }
     }
 
-    /* Medium devices (landscape tablets, 768px and up) */
-    @media only screen and (min-width: 769px) {
-        h1 {
-            font-size: 11vw;
-        }
-
-        h4 {
-            font-size: 1.3em;
-            margin-top: -1.2vw;
+    @media only screen and (min-width: 768px) {
+        .creative {
+            width: 40vw;
         }
     }
 
-    /* Extra large devices (large laptops and desktops, 1200px and up) */
     @media only screen and (min-width: 1024px) {
-        h1 {
-            font-size: 11vw;
+        .creative {
+            width: 35vw;
+        }
+
+        .images {
+            gap: 2vw;
         }
     }
 
-    /* Extra large devices (large laptops and desktops, 1200px and up) */
-    @media only screen and (min-width: 1440px) {
-    }
 </style>

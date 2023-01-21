@@ -19,7 +19,7 @@
 
 <svelte:head>
     <title>About | Alessia Milla - Creative Director</title>
-    <meta name="description" content="About this app"/>
+    <meta name="description" content="Alessia Milla - About"/>
 </svelte:head>
 
 {#if data}
@@ -28,7 +28,7 @@
             <video src="/bg.mp4" muted autoplay loop></video>
         </div>
         <div class="content">
-            <Alessia/>
+            <Alessia bordered={false}/>
             <div class="inner-content">
                 <div class="floating top left">
                     <figure data-speed="0.2">
@@ -78,6 +78,20 @@
         flex-direction: column;
         overflow: hidden;
     }
+
+    :global(p) {
+        font-size: 13px;
+        text-transform: uppercase;
+        line-height: 2.5em;
+        letter-spacing: 0.3em;
+    }
+
+    :global(small) {
+        line-height: 2.5em;
+        letter-spacing: 0.2em;
+        margin-bottom: 15em;
+    }
+
 
     video {
         object-fit: cover;
@@ -157,22 +171,5 @@
     .video-container {
         flex: 1;
     }
-
-    /*.top-right {*/
-    /*  right: -300px;*/
-    /*  top: 4em;*/
-    /*  transform: rotate(10deg);*/
-    /*}*/
-
-    /*.bottom-left {*/
-    /*  left: -300px;*/
-    /*  top: 4em;*/
-    /*  transform: rotate(-10deg);*/
-    /*}*/
-
-    /*.bottom-right {*/
-
-    /*}*/
-
 
 </style>

@@ -105,18 +105,15 @@
   }
 
   :global(p) {
-    /*display: flex;*/
     font-size: 13px;
     text-transform: uppercase;
     line-height: 2.5em;
     letter-spacing: 0.3em;
-    margin-bottom:15em;
   }
 
-    :global(small) {
+  :global(small) {
     line-height: 2.5em;
     letter-spacing: 0.2em;
-    margin-bottom:15em;
   }
 
 
@@ -239,16 +236,31 @@
     align-items: center;
   }
 
-
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .content {
     margin: 5em 3em;
   }
+
+    h1 {
+    font-size: 13vw;
+  }
+
     .inner-content {
-      margin: 0 18%;
+      margin: 0 5%;
   }
 }
+
+  @media only screen and (max-width: 375px) {
+        .content {
+    margin: 3em 3em;
+  }
+
+    .inner-content {
+      margin: 0 0;
+  }
+}
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {

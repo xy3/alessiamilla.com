@@ -1,4 +1,8 @@
-<div class="container">
+<script lang="ts">
+    export let bordered = true
+</script>
+
+<div class="container" class:bordered={bordered}>
     <slot></slot>
 </div>
 
@@ -8,6 +12,9 @@
         position: relative;
         height: 19vw;
         overflow: hidden;
+    }
+
+    .container.bordered {
         border: var(--border-width) solid white;
         margin: var(--negative-border-width) 0 0 0;
     }

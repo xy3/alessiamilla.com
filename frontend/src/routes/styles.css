@@ -142,6 +142,11 @@ p {
     font-size: 1.2em;
 }
 
+strong {
+    font-weight: 900;
+    letter-spacing: 0.23em;
+}
+
 iframe {
     width: calc(100% + 8em);
     border: 0;
