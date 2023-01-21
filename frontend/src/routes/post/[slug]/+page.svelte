@@ -48,7 +48,7 @@
       })
     }
     // document.querySelector("video").play()
-    document.querySelectorAll('img').forEach((item) => {
+    document.querySelectorAll('.content img').forEach((item) => {
       item.addEventListener('click', () => {
         img = item.src
         open = true
@@ -236,10 +236,20 @@
     align-items: center;
   }
 
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .content {
+    margin: 5em 2em;
+  }
+    .inner-content {
+      margin: 0 10%;
+  }
+}
+
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .content {
-    margin: 5em 3em;
+    margin: 3em 3em;
   }
 
     h1 {
@@ -251,24 +261,18 @@
   }
 }
 
-  @media only screen and (max-width: 375px) {
+
+
+
+
+
+    @media only screen and (max-width: 400px) {
         .content {
-    margin: 3em 3em;
+    margin: 2em 2.1em;
   }
 
     .inner-content {
       margin: 0 0;
-  }
-}
-
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .content {
-    margin: 5em 2em;
-  }
-    .inner-content {
-      margin: 0 18%;
   }
 }
 
