@@ -2,7 +2,6 @@
     import './styles.css';
     import Marquee from "./Marquee.svelte";
     import Nav from "./Nav.svelte";
-    import {afterUpdate} from "svelte";
 </script>
 
 <svelte:head>
