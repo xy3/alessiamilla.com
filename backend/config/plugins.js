@@ -16,6 +16,9 @@ module.exports = ({env}) => (
         ],
       },
     },
+    'drag-drop-content-types': {
+      enabled: true
+    },
     'tinymce': {
       enabled: true,
       resolve: './src/plugins/tinymce',
