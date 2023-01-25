@@ -1,18 +1,26 @@
-<script lang="ts">
+<script>
     import PostImage from "./PostImage.svelte";
     import Alessia from "./Alessia.svelte";
     import {afterUpdate} from "svelte";
 
     export let data;
 
-    afterUpdate(async () => {
-        await document.querySelectorAll("video").forEach(v => {
-            const source = v.querySelector("source")
-            // v.pause()
-            source.setAttribute('src', v.src);
-            v.pause();
-            v.play();
-        })
+    // afterUpdate(async () => {
+    //     await document.querySelectorAll("video").forEach(v => {
+    //         const source = v.querySelector("source")
+    //         // v.pause()
+    //         source.setAttribute('src', v.src);
+    //         v.pause();
+    //         v.play();
+    //     })
+    // })
+
+    import lozad from 'lozad'
+    import {onMount} from "svelte";
+
+    onMount(() => {
+        const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+        observer.observe();
     })
 </script>
 
@@ -32,6 +40,7 @@
                     image={post.attributes.HeaderImage.data?.attributes.url}
                     color={post.attributes.Color || "#000000"}
                     poster={post.attributes.Poster.data?.attributes.url}
+                    smallPoster={post.attributes.Poster.data?.attributes.formats?.small?.url}
             />
         {/each}
     {/if}

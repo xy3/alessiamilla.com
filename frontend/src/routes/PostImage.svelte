@@ -1,6 +1,5 @@
 <script lang="ts">
     import {PUBLIC_API_URL} from "$env/static/public";
-    import {afterUpdate} from "svelte";
     import PostContainer from "./PostContainer.svelte";
 
     export let slug
@@ -10,6 +9,7 @@
     $: vid = image && image.endsWith('mp4')
 
     export let poster
+    export let smallPoster
 
 </script>
 
@@ -19,8 +19,9 @@
             <img src={PUBLIC_API_URL + image} alt={title + " image"}>
         {/if}
         {#if vid}
-            <video src={PUBLIC_API_URL + image} poster={poster ? PUBLIC_API_URL + poster : ""} playsinline autoplay muted loop style={"background:"+color}>
-                <source src={PUBLIC_API_URL + image} type="video/mp4">
+<!--            preload="none"-->
+            <video class="lozad" data-src={PUBLIC_API_URL + image} poster={smallPoster ? PUBLIC_API_URL + smallPoster : ""} data-poster={poster ? PUBLIC_API_URL + poster : ""}  playsinline autoplay muted loop style={"background:"+color}>
+                <source data-src={PUBLIC_API_URL + image} type="video/mp4">
             </video>
         {/if}
         <div class="title" style="background-color:{color+'80'};">
@@ -72,14 +73,14 @@
             font-style: normal;
             font-weight: bold;
             letter-spacing: 0.0em;
-            font-size: 4.25vw;
+            font-size: 4.15vw;
         }
         33% {
             font-family: 'Vegawanty', serif;
             font-style: normal;
             margin-bottom: -7px;
             letter-spacing: 0.3vw;
-            font-size: 4.2vw;
+            font-size: 4.1vw;
         }
         66% {
             font-family: 'Lato', sans-serif;
@@ -87,7 +88,7 @@
             font-style: italic;
             margin-bottom: -3px;
             letter-spacing: 0.2vw;
-            font-size: 4.3vw;
+            font-size: 4.2vw;
         }
     }
 
