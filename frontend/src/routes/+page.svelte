@@ -1,8 +1,19 @@
 <script lang="ts">
     import PostImage from "./PostImage.svelte";
     import Alessia from "./Alessia.svelte";
+    import {afterUpdate} from "svelte";
 
     export let data;
+
+    afterUpdate(async () => {
+        await document.querySelectorAll("video").forEach(v => {
+            const source = v.querySelector("source")
+            // v.pause()
+            source.setAttribute('src', v.src);
+            v.pause();
+            v.play();
+        })
+    })
 </script>
 
 <svelte:head>
@@ -20,6 +31,7 @@
                     title={post.attributes.Title}
                     image={post.attributes.HeaderImage.data?.attributes.url}
                     color={post.attributes.Color || "#000000"}
+                    poster={post.attributes.Poster.data?.attributes.url}
             />
         {/each}
     {/if}

@@ -15,6 +15,7 @@
           Title: string
           Content: string
           HeaderImage: object[]
+          Poster: object[]
           Color: string
           Slug: string
           Overlays: object[]

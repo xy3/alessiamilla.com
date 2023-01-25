@@ -9,15 +9,7 @@
     export let color = "#000000"
     $: vid = image && image.endsWith('mp4')
 
-    afterUpdate(async () => {
-        await document.querySelectorAll("video").forEach(v => {
-            const source = v.querySelector("source")
-            // v.pause()
-            source.setAttribute('src', v.src);
-            v.load();
-            v.play();
-        })
-    })
+    export let poster
 
 </script>
 
@@ -27,7 +19,7 @@
             <img src={PUBLIC_API_URL + image} alt={title + " image"}>
         {/if}
         {#if vid}
-            <video src={PUBLIC_API_URL + image} playsinline autoplay muted loop style={"background:"+color}>
+            <video src={PUBLIC_API_URL + image} poster={poster ? PUBLIC_API_URL + poster : ""} playsinline autoplay muted loop style={"background:"+color}>
                 <source src={PUBLIC_API_URL + image} type="video/mp4">
             </video>
         {/if}
