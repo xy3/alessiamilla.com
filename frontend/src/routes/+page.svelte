@@ -15,12 +15,19 @@
     //     })
     // })
 
-    import lozad from 'lozad'
+    import LazyLoad from "vanilla-lazyload";
+
+    // import lozad from 'lozad'
     import {onMount} from "svelte";
 
     onMount(() => {
-        const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-        observer.observe();
+        // const observer = lozad()
+        // observer.observe()
+        var lazyLoadInstance = new LazyLoad({
+            // Your custom settings go here
+        });
+        lazyLoadInstance.update();
+
     })
 </script>
 

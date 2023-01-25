@@ -19,10 +19,20 @@
             <img src={PUBLIC_API_URL + image} alt={title + " image"}>
         {/if}
         {#if vid}
-<!--            preload="none"-->
-            <video class="lozad" data-src={PUBLIC_API_URL + image} poster={smallPoster ? PUBLIC_API_URL + smallPoster : ""} data-poster={poster ? PUBLIC_API_URL + poster : ""}  playsinline autoplay muted loop style={"background:"+color}>
+            <video
+                    class="lazy"
+                    data-src={PUBLIC_API_URL + image}
+                    poster={smallPoster ? PUBLIC_API_URL + smallPoster : ""}
+                    data-poster={poster ? PUBLIC_API_URL + poster : ""}
+                    preload="metadata"
+                    playsinline
+                    autoplay
+                    muted
+                    loop
+                    style={"background:"+color}>
                 <source data-src={PUBLIC_API_URL + image} type="video/mp4">
             </video>
+
         {/if}
         <div class="title" style="background-color:{color+'80'};">
             <h3>{title}</h3>

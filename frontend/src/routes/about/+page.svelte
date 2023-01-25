@@ -108,19 +108,18 @@
         width: 100%;
         z-index: 1;
         padding-bottom: 7em;
-        background: #00000060;
+        background: #00000080;
     }
 
     .content > .inner-content {
         position: relative;
-        background-color: #00000080;
-        padding: 2em;
-        width: 50%;
+        /*background-color: #00000080;*/
+        padding: 0 2em;
+        /*width: 50%;*/
     }
 
     .floating {
         position: absolute;
-        width: 300px;
     }
 
     .floating img, .floating figure {
@@ -170,6 +169,78 @@
 
     .video-container {
         flex: 1;
+    }
+
+
+    @media only screen and (max-width: 768px) {
+        .inner-content {
+            width: 100%;
+        }
+
+        .inner-content :global(table img) {
+            margin: 1em;
+            width: calc(100% - 2em);
+        }
+
+        .inner-content :global(table p:nth-of-type(2)) {
+            text-align: center;
+            font-weight: 900;
+            margin-top: -20px;
+        }
+
+        .content > .inner-content > p {
+            padding: 1em;
+        }
+
+        .floating {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .inner-content {
+            width: 50%;
+        }
+
+        .floating {
+            width: 17vw;
+        }
+
+        .left {
+            left: -17vw;
+        }
+
+        .right {
+            right: -17vw;
+        }
+    }
+
+    /*@media only screen and (min-width: 992px) {*/
+    /**/
+    /*}*/
+
+    @media only screen and (min-width: 1024px) {
+        .inner-content {
+            width: 50%;
+        }
+
+        .floating {
+            width: 200px;
+        }
+
+        .left {
+            left: -20vw;
+        }
+
+        .right {
+            right: -20vw;
+        }
+    }
+
+    @media only screen and (min-width: 1440px) {
+        .floating {
+            width: 300px;
+        }
     }
 
 </style>
