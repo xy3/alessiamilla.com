@@ -24,11 +24,11 @@
 
 {#if data}
     <div class="container" data-scene>
+        <Alessia bordered={false}/>
         <div class="video-container">
             <video src="/bg.mp4" muted autoplay loop></video>
         </div>
         <div class="content">
-            <Alessia bordered={false}/>
             <div class="inner-content">
                 <div class="floating top left">
                     <figure data-speed="0.2">
@@ -98,6 +98,8 @@
         position: absolute;
         min-width: 100%;
         height: 100%;
+        top: 0;
+        opacity: 0.2;
     }
 
     .content {
@@ -108,7 +110,7 @@
         width: 100%;
         z-index: 1;
         padding-bottom: 7em;
-        background: #00000080;
+        /*background: rgba(0, 0, 0, 0.88);*/
     }
 
     .content > .inner-content {
@@ -198,6 +200,10 @@
     }
 
     @media only screen and (min-width: 768px) {
+        .inner-content :global(table) {
+            display: none;
+        }
+
         .inner-content {
             width: 50%;
         }

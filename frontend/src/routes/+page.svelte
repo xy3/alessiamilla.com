@@ -1,7 +1,7 @@
 <script>
     import PostImage from "./PostImage.svelte";
     import Alessia from "./Alessia.svelte";
-    import {afterUpdate} from "svelte";
+    // import {afterUpdate} from "svelte";
 
     export let data;
 
