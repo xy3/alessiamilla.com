@@ -18,6 +18,12 @@
         z-index: 10;
     }
 
+    @media only screen and (max-width: 768px) {
+        nav a {
+            font-size: 13px;
+        }
+    }
+
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {
         nav {
