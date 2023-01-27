@@ -33,9 +33,10 @@
 </script>
 
 <svelte:head>
-    <title>Alessia Milla | Creative Director</title>
+    <title>Alessia Milla | Creative Direction and Consultancy</title>
     <meta name="description" property="og:description" content="Alessia Milla | Creative Direction and Consultancy"/>
     <meta name="title" property="og:title" content="Alessia Milla | Creative Director"/>
+    <meta name="author" property="og:author" content="Alessia Milla"/>
     <meta name="image" property="og:image"
           content={PUBLIC_API_URL + "/uploads/Screenshot_20230127_204840_d417587e47.png"}/>
 </svelte:head>

@@ -18,10 +18,13 @@
 </script>
 
 <svelte:head>
-    <title>About | Alessia Milla - Creative Director</title>
-    <meta name="description" content="Alessia Milla - About"/>
-
-    <!--    <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg"/>-->
+    <title>About - Alessia Milla | Creative Direction and Consultancy</title>
+    <meta name="description" property="og:description"
+          content="About Alessia Milla | Creative Direction and Consultancy"/>
+    <meta name="title" property="og:title" content="About - Alessia Milla | Creative Director"/>
+    <meta name="author" property="og:author" content="Alessia Milla"/>
+    <meta name="image" property="og:image"
+          content={PUBLIC_API_URL + "/uploads/about_df28e2b94d.png"}/>
 </svelte:head>
 
 {#if data}

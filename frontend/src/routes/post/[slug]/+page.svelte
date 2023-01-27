@@ -61,14 +61,17 @@
 
 <svelte:head>
     {#if data.data.data}
-        <title>{data.data.data[0].attributes.Title} | Alessia Milla</title>
+        <title>{data.data.data[0].attributes.Title} | Alessia Milla Creative Direction and Consultancy</title>
         <meta name="description" content={data.data.data[0].attributes.Title}/>
         <meta property="og:description" content={data.data.data[0].attributes.Title}/>
         <meta property="og:image" content={PUBLIC_API_URL + data.data.data[0].attributes.Poster.data?.attributes.url}/>
     {:else}
-        <title>Alessia Milla | Creative Director</title>
-        <meta name="description" content="Read this blog post from Alessia Milla | Creative Director"/>
+        <title>Alessia Milla | Creative Direction and Consultancy</title>
+        <meta name="description" content="Read this blog post from Alessia Milla | Creative Direction and Consultancy"/>
+            <meta name="image" property="og:image"
+          content={PUBLIC_API_URL + "/uploads/Screenshot_20230127_204840_d417587e47.png"}/>
     {/if}
+    <meta name="author" property="og:author" content="Alessia Milla"/>
 </svelte:head>
 
 {#if data.data.data}
