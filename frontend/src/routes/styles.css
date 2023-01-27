@@ -133,6 +133,10 @@ h2, h3, h4, h5 {
     letter-spacing: 0.3em;
 }
 
+h5 {
+    font-size: 16px;
+}
+
 hr {
     margin-top: 2.5em;
     margin-bottom: 4em;
