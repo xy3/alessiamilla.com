@@ -69,6 +69,14 @@
         opacity: 1;
     }
 
+    .title h3 {
+                    font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            letter-spacing: 0.0em;
+            font-size: 4.15vw;
+    }
+
     .title:hover h3 {
         animation-name: fontChange;
         animation-duration: 0.6s;

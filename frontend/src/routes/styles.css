@@ -128,13 +128,15 @@ h1, h2, h3, h4 {
     color: white;
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5 {
     line-height: 1.9em;
     letter-spacing: 0.3em;
 }
 
 hr {
-    margin-bottom: 2.5em;
+    margin-top: 2.5em;
+    margin-bottom: 4em;
+    width: 100%;
 }
 
 colgroup {
