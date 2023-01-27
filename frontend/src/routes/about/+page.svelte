@@ -21,7 +21,7 @@
     <title>About - Alessia Milla | Creative Direction and Consultancy</title>
     <meta name="description" property="og:description"
           content="About Alessia Milla | Creative Direction and Consultancy"/>
-    <meta name="title" property="og:title" content="About - Alessia Milla | Creative Director"/>
+    <meta name="title" property="og:title" content="About - Alessia Milla | Creative Direction and Consultancy"/>
     <meta name="author" property="og:author" content="Alessia Milla"/>
     <meta name="image" property="og:image"
           content={PUBLIC_API_URL + "/uploads/about_df28e2b94d.png"}/>

@@ -9,7 +9,7 @@
         <div class="inner-content">
             <div class="images">
                 <img class="am" src="/am.svg" alt="Alessia Milla">
-                <img class="creative" src="/creative.svg" alt="Creative Director and consultancy">
+                <img class="creative" src="/creative.svg" alt="Creative Direction and consultancy">
             </div>
         </div>
     </PostContainer>
