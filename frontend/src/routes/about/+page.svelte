@@ -20,6 +20,8 @@
 <svelte:head>
     <title>About | Alessia Milla - Creative Director</title>
     <meta name="description" content="Alessia Milla - About"/>
+
+    <!--    <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg"/>-->
 </svelte:head>
 
 {#if data}
