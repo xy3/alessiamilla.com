@@ -45,6 +45,7 @@
     const videos = await document.querySelectorAll("video")
     if (videos) {
       await videos.forEach(vid => {
+        vid.playsInline = true
         vid.play()
       })
     }
@@ -164,7 +165,7 @@
 
   .container :global(table) {
     width: auto !important;
-    margin: 0 -4.9em;
+    margin: 0 -4em;
     padding: 0.5em 0;
     display: flex;
     height: unset!important;
@@ -196,25 +197,32 @@
   }
 
   .container :global(p > img) {
-    width: calc(100% + 8em);
+    width: calc(100% + 10em);
     height: 100%;
     object-fit: cover;
     /*aspect-ratio: 16/9;*/
-    margin: 0 -4em;
+    margin: 0 -5em;
   }
+
+    .container :global(p > video) {
+    width: calc(100% + 10em);
+    height: 100%;
+    object-fit: cover;
+    margin: 0 -5em;
+  }
+
+    .container :global(iframe) {
+    width: calc(100% + 10em);
+    border: 0;
+    aspect-ratio: 16/9;
+    margin: 0 -5em;
+}
 
   :global(td) {
     height: unset!important;
   }
     :global(tr) {
     height: unset!important;
-  }
-
-  .container :global(video) {
-    width: calc(100% + 8em);
-    height: 100%;
-    object-fit: cover;
-    margin: 0 -4em;
   }
 
   .inner-content {
@@ -260,6 +268,24 @@
     .inner-content {
       margin: 0 5%;
   }
+
+      .container :global(table) {
+    margin: 0 -2em;
+  }
+
+        .container :global(p > img) {
+    width: calc(100% + 5em);
+    margin: 0 -2.5em;
+  }
+
+                .container :global(p > video) {
+    width: calc(100% + 5em);
+    margin: 0 -2.5em;
+  }
+  /*.container :global(video) {*/
+  /*  width: calc(100% + 2em);*/
+  /*  margin: 0 -0em;*/
+  /*}*/
 }
 
 
@@ -267,7 +293,7 @@
 
 
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 500px) {
         .content {
     margin: 2em 2.1em;
   }
