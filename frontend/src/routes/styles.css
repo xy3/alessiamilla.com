@@ -119,6 +119,12 @@
     font-display: swap;
 }
 
+p a {
+    padding: 0.2em;
+    background-color: white;
+    color: black;
+}
+
 
 body {
     margin: 0;
