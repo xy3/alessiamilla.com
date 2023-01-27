@@ -211,7 +211,7 @@
     margin: 0 -5em;
   }
 
-    .container :global(iframe) {
+    .container :global(p > iframe) {
     width: calc(100% + 10em);
     border: 0;
     aspect-ratio: 16/9;
@@ -282,6 +282,15 @@
     width: calc(100% + 5em);
     margin: 0 -2.5em;
   }
+
+                    .container :global(p > iframe) {
+    width: calc(100% + 5em);
+    margin: 0 -2.5em;
+}
+                                        .container :global(iframe) {
+    width: calc(100% + 5em);
+    margin: 0 -2.5em;
+}
   /*.container :global(video) {*/
   /*  width: calc(100% + 2em);*/
   /*  margin: 0 -0em;*/
