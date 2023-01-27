@@ -45,9 +45,9 @@ module.exports = ({env}) => (
             plugins:
               "advlist autolink lists link image charmap preview anchor \
               searchreplace code fullscreen table emoticons \
-              insertdatetime media table code help wordcount",
+              insertdatetime media table code help wordcount hr",
             toolbar:
-              "undo redo fullscreen | styles | bold italic forecolor | \
+              "undo redo fullscreen | styles | bold italic forecolor hr | \
               alignleft aligncenter alignright alignjustify | \
               table emoticons media |\
               bullist numlist outdent indent | removeformat | help",
