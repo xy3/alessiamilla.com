@@ -26,7 +26,7 @@
     <div class="container" data-scene>
         <Alessia bordered={false}/>
         <div class="video-container">
-            <video src="/bg.mp4" muted autoplay loop></video>
+            <video src="/bg.mp4" muted autoplay loop playsinline></video>
         </div>
         <div class="content">
             <div class="inner-content">
