@@ -20,6 +20,9 @@
                     Color: string
                     Slug: string
                     Overlays: object[]
+                    createdAt: string
+                    updatedAt: string
+                    publishedAt: string
                 }
             }
         }
@@ -65,6 +68,10 @@
         <meta name="description" content={data.data.data[0].attributes.Title}/>
         <meta property="og:description" content={data.data.data[0].attributes.Title}/>
         <meta property="og:image" content={PUBLIC_API_URL + data.data.data[0].attributes.Poster.data?.attributes.url}/>
+
+        <meta property="og:article:published_time" content={PUBLIC_API_URL + data.data.data[0].attributes.publishedAt}/>
+        <meta property="og:article:modified_time" content={data.data.data[0].attributes.updatedAt}/>
+
     {:else}
         <title>Alessia Milla | Creative Direction and Consultancy</title>
         <meta name="description" content="Read this blog post from Alessia Milla | Creative Direction and Consultancy"/>
