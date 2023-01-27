@@ -71,7 +71,7 @@
 
         <meta property="og:article:published_time" content={PUBLIC_API_URL + data.data.data[0].attributes.publishedAt}/>
         <meta property="og:article:modified_time" content={data.data.data[0].attributes.updatedAt}/>
-        <time datetime={data.data.data[0].attributes.updatedAt">{data.data.data[0].attributes.updatedAt}</time>
+        <time datetime={data.data.data[0].attributes.updatedAt}>{data.data.data[0].attributes.updatedAt}</time>
 
     {:else}
         <title>Alessia Milla | Creative Direction and Consultancy</title>
