@@ -34,10 +34,9 @@
 
 <svelte:head>
     <title>Alessia Milla | Creative Director</title>
-    <meta name="description" content="Alessia Milla | Creative Direction and Consultancy"/>
-    <meta name="og:description" content="Alessia Milla | Creative Direction and Consultancy"/>
-    <meta property="og:title" content="Alessia Milla | Creative Director"/>
-    <meta property="og:image"
+    <meta name="description" property="og:description" content="Alessia Milla | Creative Direction and Consultancy"/>
+    <meta name="title" property="og:title" content="Alessia Milla | Creative Director"/>
+    <meta name="image" property="og:image"
           content={PUBLIC_API_URL + "/uploads/Screenshot_20230127_204840_d417587e47.png"}/>
 </svelte:head>
 
