@@ -4,10 +4,6 @@
     import Nav from "./Nav.svelte";
 </script>
 
-<svelte:head>
-    <link rel="preconnect" href="https://api.alessiamilla.com">
-</svelte:head>
-
 <Marquee/>
 <div class="app">
     <Nav/>
